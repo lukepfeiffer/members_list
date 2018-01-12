@@ -1,0 +1,18 @@
+<h1> Users List </h1>
+<%= link_to "Create User", new_user_path, class: "btn btn-primary" %>
+
+<div class="users">
+  <div class="row">
+    <%- @users.each do |user| %>
+      <div class="user col col-md-3">
+        <h2> <%= user.full_name %> </h1>
+        <p> <%= user.email %> </p>
+        <p> <%= user.age %> </p>
+        <div class="actions">
+          <%= link_to "Edit", edit_user_path(user.id), class: "btn btn-warning" %>
+          <%= link_to "Delete", user_path(user.id), method: :delete, class: "btn btn-danger"%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

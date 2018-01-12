@@ -1,0 +1,23 @@
+<%= form_for @user do |f| %>
+  <div class="form-group">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, placeholder: "John", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, placeholder: "Smith", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.text_field :email, placeholder: "email@example.com", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :age %>
+    <%= f.number_field :age, class: "form-control" %>
+  </div>
+
+  <%= f.submit "Save", class: "btn btn-primary" %>
+<% end %>
