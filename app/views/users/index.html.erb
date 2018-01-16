@@ -1,5 +1,9 @@
 <h1> Users List </h1>
 <%= link_to "Create User", new_user_path, class: "btn btn-primary" %>
+<h2> Sort by </h2>
+<%= link_to "Age", users_path(sort: "age"), class: "btn btn-success" %>
+<%= link_to "First Name", users_path(sort: "first_name"), class: "btn btn-info" %>
+<%= link_to "Last Name", users_path, class: "btn btn-warning" %>
 
 <div class="users">
   <div class="row">

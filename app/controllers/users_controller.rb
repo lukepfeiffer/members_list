@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all.reverse
+    users = User.all
+    @users = users.sort_by(&:last_name)
+    if params[:sort] == "age"
+      @users = users.sort_by(&:age)
+    elsif params[:sort] == "first_name"
+      @users = users.sort_by(&:first_name)
+    end
   end
 
   def edit
